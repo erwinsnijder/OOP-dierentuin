@@ -1,9 +1,37 @@
-let fish = {
+// function fish(breathes, skin, animal) {
+//   this.breathes = breathes;
+//   this.skin = scales;
+//   this.class = animal;
+//   // console.log("a fish breathes " + this.breathes + " and a fish has " + this.skin);
+//   }
+
+// function fish() { }
+
+// fish.prototype = { constructor: fish,
+//   breathes: "water", 
+//   describe: function() {
+//     console.log("i breathe" + breathes);
+//   }
+// };
+function fish() { }
+
+fish.prototype = {
+  constructor: fish,
   breathes: "water",
   skin: "scales",
-  class: "animal"
+  describe: function() {
+    console.log("i breathe");
+  }
 };
-console.log("a fish breathes " + fish.breathes + " and a fish has " + fish.skin);
+
+let guppy = Object.create(fish.prototype);
+
+guppy.describe();
+
+let angelfish = Object.create(fish.prototype);
+
+angelfish.describe();
+// console.log("a fish breathes " + this.breathes + " and a fish has " + this.skincolor);
 
 let mamal = {
   breathes: "air",
@@ -19,10 +47,21 @@ let bird= {
 };
 console.log("a bird breathes " + bird.breathes + " and a bird has " + bird.skin);
 
-console.log(" a fish is an "+ fish.class + "," + " a mamal is an "+ mamal.class + "," + " a bird is an "+ bird.class);
+// console.log(" a fish is an "+ fish.class + "," + " a mamal is an "+ mamal.class + "," + " a bird is an "+ bird.class);
  let caretaker= {
 name: "garry",
   care: "animals"
 
  };
- console.log (caretaker.name + "takes care of" + caretaker.care);
+ console.log (caretaker.name + " takes care of " + caretaker.care);
+
+ 
+
+//  function joinfishFraternity(candidate) {
+//   if (candidate.constructor === fish) {
+//     return true;
+//   } else {
+//     return false;
+  
+//   }
+// }
