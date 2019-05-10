@@ -1,16 +1,23 @@
 function fish() { }
 fish.prototype = {
   constructor: fish,
+  name: " ",
   breathes: "water",
   skin: "scales",
   describe: function() {
-    console.log("i breathe "+ fish.prototype.breathes + " and have " + fish.prototype.skin);
+    console.log(this.name + " breathes "+ this.breathes + fish.prototype.breathes +
+     " and have " + fish.prototype.skin);
   }
 };
 
 let guppy = Object.create(fish.prototype);
+guppy.name = "guppy"
+guppy.breathes = "fresh "
 guppy.describe();
+
 let angelfish = Object.create(fish.prototype);
+angelfish.name = "angelfish"
+angelfish.breathes = "salt "
 angelfish.describe();
 
 function mamals() { }
@@ -20,7 +27,9 @@ mamals.prototype = {
   breathes: "air",
   skin: "fur",
   describe: function() {
-    console.log("my name is " + this.name+", " + "i breathe " + mamals.prototype.breathes + " and have " + mamals.prototype.skin);
+    console.log("my name is " + this.name+", " + "i breathe "
+    + mamals.prototype.breathes
+   + " and have " + mamals.prototype.skin);
   
   }
 };
@@ -39,7 +48,8 @@ zebra.name = "iglesias";
     moves: "fly",
     skin: "feathers",
     describe: function() {
-      console.log("i " +birds.prototype.moves + " and have " + birds.prototype.skin);
+      console.log("i " +birds.prototype.moves + " and have "
+       + birds.prototype.skin);
     }
   };
   let falcon = Object.create(birds.prototype);
@@ -54,7 +64,8 @@ zebra.name = "iglesias";
     caresfor: "",
     smokes: "",
     describe: function() {
-    console.log("my name is " + this.name + " i take care of the "+this.caresfor);
+    console.log("my name is " + this.name + " i take care of the "
+    +this.caresfor);
     }
   };
 
