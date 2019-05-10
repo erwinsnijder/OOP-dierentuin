@@ -1,67 +1,73 @@
-// function fish(breathes, skin, animal) {
-//   this.breathes = breathes;
-//   this.skin = scales;
-//   this.class = animal;
-//   // console.log("a fish breathes " + this.breathes + " and a fish has " + this.skin);
-//   }
-
-// function fish() { }
-
-// fish.prototype = { constructor: fish,
-//   breathes: "water", 
-//   describe: function() {
-//     console.log("i breathe" + breathes);
-//   }
-// };
 function fish() { }
-
 fish.prototype = {
   constructor: fish,
   breathes: "water",
   skin: "scales",
   describe: function() {
-    console.log("i breathe");
+    console.log("i breathe "+ fish.prototype.breathes + " and have " + fish.prototype.skin);
   }
 };
 
 let guppy = Object.create(fish.prototype);
-
 guppy.describe();
-
 let angelfish = Object.create(fish.prototype);
-
 angelfish.describe();
-// console.log("a fish breathes " + this.breathes + " and a fish has " + this.skincolor);
 
-let mamal = {
+function mamals() { }
+mamals.prototype = {
+  constructor: mamals,
+  name: "",
   breathes: "air",
   skin: "fur",
-  class: "animal"
-};
-console.log("a mamal breathes " + mamal.breathes + " and a mamal has " + mamal.skin);
-
-let bird= {
-  breathes: "air",
-  skin: "feathers",
-  class: "animal"
-};
-console.log("a bird breathes " + bird.breathes + " and a bird has " + bird.skin);
-
-// console.log(" a fish is an "+ fish.class + "," + " a mamal is an "+ mamal.class + "," + " a bird is an "+ bird.class);
- let caretaker= {
-name: "garry",
-  care: "animals"
-
- };
- console.log (caretaker.name + " takes care of " + caretaker.care);
-
- 
-
-//  function joinfishFraternity(candidate) {
-//   if (candidate.constructor === fish) {
-//     return true;
-//   } else {
-//     return false;
+  describe: function() {
+    console.log("my name is " + this.name+", " + "i breathe " + mamals.prototype.breathes + " and have " + mamals.prototype.skin);
   
-//   }
-// }
+  }
+};
+
+let bear = Object.create(mamals.prototype);
+bear.name = "carlos";
+bear.describe();
+let zebra = Object.create(mamals.prototype);
+zebra.name = "iglesias";
+  zebra.describe();
+
+
+ function birds() { }
+ birds.prototype = {
+    constructor: birds,
+    moves: "fly",
+    skin: "feathers",
+    describe: function() {
+      console.log("i " +birds.prototype.moves + " and have " + birds.prototype.skin);
+    }
+  };
+  let falcon = Object.create(birds.prototype);
+  falcon.describe();
+  let parrot = Object.create(birds.prototype);
+  parrot.describe();
+
+  function caretaker() { }
+  caretaker.prototype = {
+    constructor: mamals,
+    name: "",
+    caresfor: "",
+    smokes: "",
+    describe: function() {
+    console.log("my name is " + this.name + " i take care of the "+this.caresfor);
+    }
+  };
+
+  let garry = Object.create(caretaker.prototype);
+  garry.name = "garry",
+  garry.caresfor = mamals,
+  garry.describe();
+
+  let harry = Object.create(caretaker.prototype);
+  harry.name = "harry",
+  harry.caresfor = birds,
+  harry.describe();
+
+
+
+
