@@ -20,6 +20,8 @@ angelfish.name = "angelfish"
 angelfish.breathes = "salt "
 angelfish.describe();
 
+let shark = new fish("bruce");
+
 function mamals() { }
 mamals.prototype = {
   constructor: mamals,
@@ -27,7 +29,7 @@ mamals.prototype = {
   breathes: "air",
   skin: "fur",
   describe: function() {
-    console.log("my name is " + this.name+", " + "i breathe "
+    console.log("i am" + this.type + "my name is " + this.name+", " + "i breathe "
     + mamals.prototype.breathes
    + " and have " + mamals.prototype.skin);
   
@@ -35,9 +37,14 @@ mamals.prototype = {
 };
 
 let bear = Object.create(mamals.prototype);
+bear.type = bear;
 bear.name = "carlos";
 bear.describe();
+
+// document.getElementById("bear description").innerHTML = bear.describe();
+
 let zebra = Object.create(mamals.prototype);
+zebra.type = zebra;
 zebra.name = "iglesias";
   zebra.describe();
 
@@ -45,16 +52,20 @@ zebra.name = "iglesias";
  function birds() { }
  birds.prototype = {
     constructor: birds,
+    name: " ",
     moves: "fly",
     skin: "feathers",
     describe: function() {
-      console.log("i " +birds.prototype.moves + " and have "
+      console.log( this.name + " i " +birds.prototype.moves + " and have "
        + birds.prototype.skin);
     }
   };
   let falcon = Object.create(birds.prototype);
-  falcon.describe();
+    falcon.name = "falcon";
+    falcon.describe();
+
   let parrot = Object.create(birds.prototype);
+  parrot.name = "parrot";
   parrot.describe();
 
   function caretaker() { }
